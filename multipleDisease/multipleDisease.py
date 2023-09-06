@@ -8,13 +8,14 @@ Created on Wed Sep  6 13:43:53 2023
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pickle
+import os
 
 
-
-
-dmdb=pickle.load(open("savedModels/diabetes_model.sav",'rb'))
-dmh=pickle.load(open("savedModels/heart_disease_model.sav",'rb'))
-dmp=pickle.load(open("savedModels/parkinsons_model.sav",'rb'))
+path = os.path.dirname(__file__)
+#my_file = path+'/photo.png'
+dmdb=pickle.load(open(path+"/savedModels/diabetes_model.sav",'rb'))
+dmh=pickle.load(open(path+"/savedModels/heart_disease_model.sav",'rb'))
+dmp=pickle.load(open(path+"/savedModels/parkinsons_model.sav",'rb'))
 
 
 with st.sidebar:
